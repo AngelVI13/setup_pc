@@ -1,3 +1,7 @@
+# Update system
+sudo dnf -y update
+sudo dnf -y upgrade
+
 # Install vim, rg, fzf and other tools
 sudo dnf install -y vim-enhanced ripgrep fzf 
 
