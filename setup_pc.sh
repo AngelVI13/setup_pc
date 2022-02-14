@@ -2,8 +2,9 @@
 sudo dnf -y update
 sudo dnf -y upgrade
 
-# Install vim, rg, fzf and other tools
-sudo dnf install -y vim-enhanced ripgrep fzf 
+# Install vim, rg, fzf and other tools. The vim-enhanced package does not come with clipboard support
+# so we need to install the alternative vim-X11 package
+sudo dnf install -y vim-X11 ripgrep fzf 
 
 # Install python tools globally
 sudo dnf install -y python3-black python3-flake8 python3-isort python3-mypy python3-ipython python3-ipdb
