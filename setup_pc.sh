@@ -19,3 +19,5 @@ sudo rm -rf vimrc
 git clone https://github.com/AngelVI13/vimrc.git 
 # Add global vimrc that links to the config from the git repo
 cp vimrc/.vimrc_top_level .vimrc
+# Make search preview script executable
+chmod 777 vimrc/.vim/search_preview.sh
