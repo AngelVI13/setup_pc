@@ -21,3 +21,11 @@ git clone https://github.com/AngelVI13/vimrc.git
 cp vimrc/.vimrc_top_level .vimrc
 # Make search preview script executable
 chmod 777 vimrc/.vim/search_preview.sh
+
+# Add git info
+echo "Adding fake git user.email. Please change it: git config --global user.email"
+git config --global user.email "angel@gmail.com"
+git config --global user.name "Angel VI"
+
+# NOTE: run the following command to make a shared folder accessible without su priviledges
+# sudo usermod -G vboxsf -a myusername
