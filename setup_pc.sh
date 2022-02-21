@@ -27,5 +27,9 @@ echo "Adding fake git user.email. Please change it: git config --global user.ema
 git config --global user.email "angel@gmail.com"
 git config --global user.name "Angel VI"
 
+# Install i3
+# After installing you have to logout and login with an i3 session
+sudo dnf install i3 i3status dmenu i3lock xbacklight feh
+
 # NOTE: run the following command to make a shared folder accessible without su priviledges
 # sudo usermod -G vboxsf -a myusername
