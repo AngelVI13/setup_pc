@@ -31,5 +31,6 @@ git config --global user.name "Angel VI"
 # After installing you have to logout and login with an i3 session
 sudo dnf install i3 i3status dmenu i3lock xbacklight feh
 
+echo "alias vim=vimx" >> .bashrc
 # NOTE: run the following command to make a shared folder accessible without su priviledges
 # sudo usermod -G vboxsf -a myusername
