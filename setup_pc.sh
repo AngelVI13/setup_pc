@@ -32,5 +32,9 @@ git config --global user.name "Angel VI"
 sudo dnf install -y i3 i3status dmenu i3lock xbacklight feh
 
 echo "alias vim=vimx" >> .bashrc
+
+# Activate git's credentials caching
+git config --global credential.helper cache
+
 # NOTE: run the following command to make a shared folder accessible without su priviledges
 # sudo usermod -G vboxsf -a myusername
