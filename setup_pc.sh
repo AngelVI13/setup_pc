@@ -36,5 +36,13 @@ echo "alias vim=vimx" >> .bashrc
 # Activate git's credentials caching
 git config --global credential.helper cache
 
+# Install pyenv for managing different python versions
+sudo dnf install -y gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel xz xz-devel libffi-devel
+curl https://pyenv.run | bash
+echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> .bashrc
+echo 'eval "$(pyenv init -)"' >> .bashrc
+echo 'eval "$(pyenv virtualenv-init -)"' >> .bashrc
+exec "$SHELL"
+
 # NOTE: run the following command to make a shared folder accessible without su priviledges
 # sudo usermod -G vboxsf -a myusername
