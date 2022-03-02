@@ -42,7 +42,17 @@ curl https://pyenv.run | bash
 echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> .bashrc
 echo 'eval "$(pyenv init -)"' >> .bashrc
 echo 'eval "$(pyenv virtualenv-init -)"' >> .bashrc
+echo 'if command -v pyenv 1>/dev/null 2>&1; then' >> .bashrc
+echo '    eval "$(pyenv init --path)"' >> .bashrc
+echo 'fi' >> .bashrc
 exec "$SHELL"
+
+# Next steps, install global & local python versions
+# pyenv install 3.10.2
+# pyenv global 3.10.2
+# cd project_folder
+# pyenv install 3.7.12
+# pyenv local 3.7.12
 
 # NOTE: run the following command to make a shared folder accessible without su priviledges
 # sudo usermod -G vboxsf -a myusername
