@@ -34,7 +34,7 @@ sudo dnf install -y i3 i3status dmenu i3lock xbacklight feh
 echo "alias vim=vimx" >> .bashrc
 
 # Activate git's credentials caching
-git config --global credential.helper cache
+git config --global credential.helper store
 
 # Install pyenv for managing different python versions
 sudo dnf install -y gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel xz xz-devel libffi-devel patch
