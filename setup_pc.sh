@@ -37,7 +37,7 @@ echo "alias vim=vimx" >> .bashrc
 git config --global credential.helper cache
 
 # Install pyenv for managing different python versions
-sudo dnf install -y gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel xz xz-devel libffi-devel
+sudo dnf install -y gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel xz xz-devel libffi-devel patch
 curl https://pyenv.run | bash
 echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> .bashrc
 echo 'eval "$(pyenv init -)"' >> .bashrc
