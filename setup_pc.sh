@@ -54,5 +54,27 @@ exec "$SHELL"
 # pyenv install 3.7.12
 # pyenv local 3.7.12
 
+# Install wily
+pushd /tmp
+
+# download wily
+curl --header 'Host: deac-ams.dl.sourceforge.net' --user-agent 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8' --header 'Accept-Language: en-US,en;q=0.5' --referer 'https://sourceforge.net/' --cookie '__cmpconsentx11319=CPVjjLAPVjjLAAfUnBENCFCsAP_AAH_AACiQGgwDwAGgAVABAADQAJgAXwAwgB4AEEAJAAUYBCAFoALzAaCBoMA8ABoAFQAQAA0ACYAF8AMIAeABBACQAFGAQgBaAC8wGggAAA; __cmpcvcx11319=__s23_s135_s24_s30_U__; __cmpcpcx11319=____' --header 'Upgrade-Insecure-Requests: 1' --header 'Sec-Fetch-Dest: document' --header 'Sec-Fetch-Mode: navigate' --header 'Sec-Fetch-Site: same-site' 'https://deac-ams.dl.sourceforge.net/project/wily/baseline/0.13.42/wily-0.13.42.tar.gz' --output 'wily-0.13.42.tar.gz'
+
+# Extract it
+mkdir wily
+cp wily-0.13.42.tar.gz wily
+cd wily
+tar -xzf wily-0.13.42.tar.gz
+# Install it
+./configure
+make
+sudo make install
+
+# Configure colors
+sudo echo "wily*background: #e8ddae" >> /etc/X11/Xresources
+sudo echo "wily*foreground: black" >> /etc/X11/Xresources
+xrdb -merge /etc/X11/Xresources
+
 # NOTE: run the following command to make a shared folder accessible without su priviledges
 # sudo usermod -G vboxsf -a myusername
+
