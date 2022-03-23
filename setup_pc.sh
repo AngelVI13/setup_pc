@@ -54,6 +54,7 @@ exec "$SHELL"
 # pyenv install 3.7.12
 # pyenv local 3.7.12
 
+<< wily
 # Install wily
 pushd /tmp
 
@@ -73,7 +74,27 @@ sudo make install
 # Configure colors
 sudo echo "wily*background: #e8ddae" >> /etc/X11/Xresources
 sudo echo "wily*foreground: black" >> /etc/X11/Xresources
+sudo echo "wily*font:*-fixed-*-*-*-18-*" >> /etc/X11/Xresources
+
 xrdb -merge /etc/X11/Xresources
+wily
+
+# Install kakoune
+sudo dnf install -y kakoune
+# install lsp support
+sudo dnf copr enable atim/kakoune -y && sudo dnf install -y kak-lsp
+pushd ~/.config
+git clone https://github.com/AngelVI13/kakrc.git
+mv ./kakrc ./kak
+# Install go lsp
+# NOTE: I think i can just install this package from dnf but this worked
+#       so i will stick with it
+go install golang.org/x/tools/gopls@latest
+echo 'export PAHT=$PATH:~/go/bin/' >> .bashrc
+# Install python lsp
+sudo dnf install -y pylsp
+popd
+
 
 # NOTE: run the following command to make a shared folder accessible without su priviledges
 # sudo usermod -G vboxsf -a myusername
