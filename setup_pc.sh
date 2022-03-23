@@ -8,6 +8,7 @@ sudo dnf install -y vim-X11 ripgrep fzf bat
 
 # Install python tools globally
 sudo dnf install -y python3-black python3-flake8 python3-isort python3-mypy python3-ipython python3-ipdb
+echo "export PYTHONBREAKPOINT=ipdb.set_trace" >> .bashrc
 
 # Add more tooling stuff here
 
