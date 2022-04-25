@@ -46,8 +46,7 @@ echo 'eval "$(pyenv virtualenv-init -)"' >> .bashrc
 echo 'if command -v pyenv 1>/dev/null 2>&1; then' >> .bashrc
 echo '    eval "$(pyenv init --path)"' >> .bashrc
 echo 'fi' >> .bashrc
-# The line below is broken i think. TMT repo has an alternative solution for this in the auto installation script
-exec "$SHELL"
+eval "$(cat ~/.bashrc | tail -n +10)"
 
 # Next steps, install global & local python versions
 # pyenv install 3.10.2
